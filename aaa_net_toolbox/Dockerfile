@@ -26,7 +26,8 @@ RUN DEBIAN_FRONTEND=noninteractive ln -fs /usr/share/zoneinfo/Etc/UTC /etc/local
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/vsftpd.conf /etc/vsftpd.conf
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/pam_d-vsftpd /etc/pam.d/vsftpd
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/rsyslog.conf /etc/rsyslog.conf
-ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/starter.sh /sbin/starter.sh
+#ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/starter.sh /sbin/starter.sh
+ADD https://raw.githubusercontent.com/Cryst/gns3-containers/master/net_toolbox/starter.sh /sbin/starter.sh
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/default_tftpd-hpa /etc/default/tftpd-hpa
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/default_snmptrapd /etc/default/snmptrapd
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/snmpd.conf /etc/snmp/snmpd.conf
@@ -34,11 +35,12 @@ ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbo
 #ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/index.html /var/www/html/index.html
 ADD https://raw.githubusercontent.com/Cryst/gns3-containers/master/net_toolbox/index.html /var/www/html/index.html
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/net_toolbox/gns3.png /var/www/html/gns3.png
+
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/clients.conf /etc/freeradius/3.0/clients.conf
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/users /etc/freeradius/3.0/mods-config/files/authorize
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/tac_plus.conf /etc/tacacs+/tac_plus.conf
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/runonce.sh /sbin/runonce.sh
-ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/starter.sh /sbin/starter.sh
+#ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/starter.sh /sbin/starter.sh
 
 
 RUN DEBIAN_FRONTEND=noninteractive chmod 755 /sbin/runonce.sh; sleep 1; /sbin/runonce.sh; \
