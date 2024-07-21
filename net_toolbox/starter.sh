@@ -10,6 +10,10 @@ kill $SNMPD_PID
 /etc/init.d/snmpd start >/dev/null 2>/dev/null
 /etc/init.d/snmptrapd start >/dev/null 2>/dev/null
 
+# Starting services
+/etc/init.d/freeradius start >/dev/null 2>/dev/null
+/etc/init.d/tacacs_plus start >/dev/null 2>/dev/null
+
 clear
 
 # Launching shell
